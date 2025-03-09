@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - TailwindCSS</title>
+    <link href="./output.css" rel="stylesheet">
+    
+    <!-- GSAP & Scroll Trigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <header class="fixed inset-x-0 top-0 z-50 w-full backdrop-blur-md bg-gray-900/30 shadow-md">
+        <nav class="flex items-center justify-center p-6 lg:px-8" aria-label="Global">
+            <div class="flex items-center space-x-12">
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="#bio" class="text-sm/6 font-semibold text-gray-100 hover:text-indigo-400">Biodata</a>
+                    <a href="#skill" class="text-sm/6 font-semibold text-gray-100 hover:text-indigo-400">Skills</a>
+                    <a href="#myworks" class="text-sm/6 font-semibold text-gray-100 hover:text-indigo-400">Works</a>
+                </div>
+            </div>
+    
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden absolute right-6">
+                <button id="menuButton" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden inset-0 z-50 backdrop-blur-xl px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/30">
+            <div class="flex items-center justify-between">
+                <button id="closeMenu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-100">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+    
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y">
+                    <div class="space-y-2 py-6">
+                        <a href="#bio" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-100 hover:bg-gray-700">Biodata</a>
+                        <a href="#skill" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-100 hover:bg-gray-700">Skills</a>
+                        <a href="#myworks" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-100 hover:bg-gray-700">Works</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section id="Hero">
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <!-- Background -->
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+
+            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                <div class="text-center">
+                    <h1 class="text-balance text-5xl font-semibold tracking-tight text-gray-100 sm:text-7xl">Hello World!</h1>
+                    <p class="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">My Name Is Nicolaus Owen Marvell, Students of Universitas Sriwijaya with a passion on web programming</p>
+                    
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#bio" class="text-sm/6 font-semibold text-gray-100">Explore More! <span aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Background -->
+            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bio" class="py-24 sm:py-32">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://source.unsplash.com/random/1600x900?technology');"></div>
+        <div class="relative mx-auto max-w-4xl px-6 lg:px-8 text-center backdrop-blur-lg rounded-2xl p-10 shadow-lg">
+            <!-- Background -->
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+
+            <h2 class="text-3xl font-semibold text-indigo-500">About Me</h2>
+            <p class="mt-4 text-lg">I'm a passionate developer dedicated to creating seamless and engaging user experiences. With a love for technology and continuous learning, I thrive on solving complex problems and building innovative solutions.</p>
+            <div class="mt-8 flex flex-col items-center">
+                <img class="w-32 h-32 rounded-full border-4 border-indigo-500 shadow-md" src="img/fish.jpg" alt="Profile Picture">
+                <h3 class="mt-4 text-2xl font-semibold">Nicolaus Owen Marvell</h3>
+                <p class="text-gray-300">Students Of Universitas Sriwijaya | Amateur Web Developer</p>
+            </div>
+    
+            <div class="mt-10">
+                <h3 class="text-2xl font-semibold text-indigo-400">Favorite Quote</h3>
+                <blockquote class="mt-4 italic text-xl text-gray-300 border-l-4 border-indigo-500 pl-4">
+                    "The world is full of lonely people waiting for the first move" 
+                    <span class="block mt-2 text-gray-400">— Wise Redittor</span>
+                </blockquote>
+            </div>
+        </div>
+        <!-- Background -->
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+    </section>    
+
+    <section id="skill" class="relative py-24 sm:py-32">
+        <div class="absolute inset-0 bg-opacity-40 backdrop-blur-lg"></div>
+        <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:text-center">
+                <h2 class="text-3xl font-semibold text-indigo-500">My Skills</h2>
+                <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">
+                    What I Can Do
+                </p>
+                <p class="mt-6 text-lg/8 text-gray-300">
+                    As a self-taught developer, I've explored various technologies and honed my skills through hands-on projects.
+                </p>
+            </div>
+    
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                    <div class="relative p-6 bg-white/10 backdrop-blur-md rounded-lg shadow-lg">
+                        <dt class="text-lg font-semibold text-indigo-400">Web Development</dt>
+                        <dd class="mt-2 text-gray-300">Building responsive and interactive websites using HTML, CSS, JavaScript, and modern frameworks.</dd>
+                    </div>
+                    <div class="relative p-6 bg-white/10 backdrop-blur-md rounded-lg shadow-lg">
+                        <dt class="text-lg font-semibold text-indigo-400">Backend Development</dt>
+                        <dd class="mt-2 text-gray-300">Creating server-side applications with PHP, Laravel, and Node.js.</dd>
+                    </div>
+                    <div class="relative p-6 bg-white/10 backdrop-blur-md rounded-lg shadow-lg">
+                        <dt class="text-lg font-semibold text-indigo-400">Database Management</dt>
+                        <dd class="mt-2 text-gray-300">Working with MySQL and PostgreSQL for data storage and management.</dd>
+                    </div>
+                    <div class="relative p-6 bg-white/10 backdrop-blur-md rounded-lg shadow-lg">
+                        <dt class="text-lg font-semibold text-indigo-400">Version Control</dt>
+                        <dd class="mt-2 text-gray-300">Using Git and GitHub for project collaboration and version control.</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+    
+    <section id="myworks" class="bg-gray-100 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl lg:text-center">
+                <h2 class="text-3xl font-semibold text-indigo-500">My Works</h2>
+                <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">
+                    Featured Projects & Contributions
+                </p>
+            </div>
+    
+            <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl grid gap-8 sm:grid-cols-2">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="img/SMART_APP.png" alt="SMART_APP" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold text-gray-900 mt-4">SMART_APP</h3>
+                    <p class="mt-2 text-gray-600">Developing a Website for an Internal Project, an intuitive platform designed to streamline student registration processes...</p>
+                </div>
+    
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="img/SIFEST.png" alt="SIFEST 2024" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold text-gray-900 mt-4">SIFEST 2024</h3>
+                    <p class="mt-2 text-gray-600">Developing a responsive and user-friendly website for SI FEST, a national-scale event organized by HIMSI FASILKOM UNSRI...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">Made By Nicolaus Owen Marvell.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://www.instagram.com/owennicolaus/" class="text-gray-400 hover:text-white">Instagram</a>
+                <a href="https://www.linkedin.com/in/nicolaus-owen-marvell-0b6675324/" class="text-gray-400 hover:text-white">LinkedIn</a>
+                <a href="https://github.com/NicolausOwen/Learning-3" class="text-gray-400 hover:text-white">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Toggle mobile menu
+    document.getElementById("menuButton").addEventListener("click", function () {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+    });
+
+    document.getElementById("closeMenu").addEventListener("click", function () {
+        document.getElementById("mobileMenu").classList.add("hidden");
+    });
+
+    // gsap animaition
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from("#Hero h1", { opacity: 0, y: -50, duration: 1 });
+    gsap.from("#Hero p", { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+    gsap.from("#Hero a", { opacity: 0, y: 50, duration: 1, delay: 1 });
+
+    gsap.from("#bio", { 
+        opacity: 0, 
+        x: -100, 
+        duration: 1, 
+        scrollTrigger: {
+            trigger: "#bio",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    gsap.from("#skill", { 
+        opacity: 0, 
+        x: 100, 
+        duration: 1, 
+        scrollTrigger: {
+            trigger: "#Experience",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    </script>
+</body>
+</html>
